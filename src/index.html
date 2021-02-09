@@ -18,7 +18,20 @@
 </head>
 
 <body>
-  <app-root></app-root>
+  <div class="container">
+    <pgr-chat user-name="Jeff">
+      <div slot="greeting">
+        <h3>Wecome to the Super Chat Demo</h3>
+      </div>
+    </pgr-chat>
+  </div>
+
+  <script>
+    const el = document.querySelector('pgr-chat');
+    el.addEventListener('onChatSent', (e) => {
+      console.log('Got a chat', e.detail);
+    })
+  </script>
 </body>
 
 </html>
