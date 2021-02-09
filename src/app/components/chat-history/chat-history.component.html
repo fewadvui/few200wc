@@ -1,4 +1,5 @@
-<div class="chat-line">
-  <p>At sometime someperson said:</p>
-  <p><em>some message</em></p>
+<div class="chat-line"
+     *ngFor="let chat of chats">
+  <p>At {{chat.when | date:'short'}} {{ chat.who }} said:</p>
+  <p><em>{{ chat.content}}</em></p>
 </div>

@@ -1,6 +1,7 @@
 <section>
-  <app-chat-history></app-chat-history>
+  <app-chat-history [chats]="chats$ | async"></app-chat-history>
 </section>
 <section>
-  <app-chat-ui></app-chat-ui>
+  <p>You are Chatting as {{ userName$ | async }}</p>
+  <app-chat-ui (onChatSent)="addChat($event)"></app-chat-ui>
 </section>
